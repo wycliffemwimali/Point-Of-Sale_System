@@ -1,6 +1,7 @@
 package com.wycliffe.pointofsalesystem.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,8 +21,9 @@ public class StockEntity {
 
     private Integer qty;
 
-    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "stockEntity", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<ItemEntity> items;
+
 
 }

@@ -1,5 +1,6 @@
 package com.wycliffe.pointofsalesystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -24,10 +25,13 @@ public class ItemEntity {
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
+    @JsonBackReference
     private CategoryEntity categoryEntity;
+
 
     @ManyToOne
     @JoinColumn(name = "stockId")
+    @JsonBackReference
     private StockEntity stockEntity;
 
     @JsonIgnore
