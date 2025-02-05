@@ -96,7 +96,7 @@ public class CheckoutServiceImpl implements CheckoutService {
     }
 
     @Override
-    public void deleteCheckout(Long id) {
+    public CheckoutEntity deleteCheckout(Long id) {
         CheckoutEntity checkout = checkoutRepository.findById(id).orElse(null);
         if (checkout != null) {
             checkoutRepository.delete(checkout);
@@ -104,6 +104,7 @@ public class CheckoutServiceImpl implements CheckoutService {
             // Optionally, throw an exception if the checkout doesn't exist
             throw new RuntimeException("Checkout not found with id: " + id);
         }
+        return checkout;
     }
 
 

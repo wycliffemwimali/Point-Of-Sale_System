@@ -60,7 +60,7 @@ public class StockServiceImpl implements StockService {
 
 
     @Override
-    public void deleteStock(Long id) {
+    public StockEntity deleteStock(Long id) {
         StockEntity stock = stockRepository.findById(id).orElse(null);
         if (stock != null) {
             stockRepository.delete(stock);
@@ -68,6 +68,7 @@ public class StockServiceImpl implements StockService {
             // Optionally, throw an exception or log the error
             throw new RuntimeException("Stock not found with id: " + id);
         }
+        return stock;
     }
 
 }

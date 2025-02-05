@@ -12,5 +12,5 @@ public interface ItemService {
     ItemEntity getItemById(Long id);
     ItemEntity updateItem(Long id, ItemEntity itemEntity);
     List<ItemEntity> getItemsByCategory(Long id);
-    void deleteItem(Long id); // Fixed return type
+    ItemEntity deleteItem(Long id); // Fixed return type
 }
