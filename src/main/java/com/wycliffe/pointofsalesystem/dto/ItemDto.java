@@ -9,7 +9,7 @@ public class ItemDto {
     private String name;
     private Double price;
     private Long categoryId;
-    private Long stockId;
+    private Long stockQuantity;
 
     public String getName() {
         return name;
@@ -35,11 +35,11 @@ public class ItemDto {
         this.categoryId = categoryId;
     }
 
-    public Long getStockId() {
-        return stockId;
+    public Long getStockQuantity() {
+        return stockQuantity;
     }
 
-    public void setStockId(Long stockId) {
-        this.stockId = stockId;
+    public void setStockQuantity(Long stockQuantity) {
+        this.stockQuantity = stockQuantity;
     }
 }

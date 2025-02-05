@@ -29,7 +29,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public ItemEntity createItem(ItemDto itemDto) {
         CategoryEntity categoryEntity = categoryRepository.findById(itemDto.getCategoryId()).orElse(null);
-        StockEntity stockEntity = stockRepository.findById(itemDto.getStockId()).orElse(null);
+        StockEntity stockEntity = stockRepository.findById(itemDto.getStockQuantity()).orElse(null);
         if (categoryEntity!=null && stockEntity!=null) {
             ItemEntity itemEntity = new ItemEntity();
             itemEntity.setName(itemDto.getName());

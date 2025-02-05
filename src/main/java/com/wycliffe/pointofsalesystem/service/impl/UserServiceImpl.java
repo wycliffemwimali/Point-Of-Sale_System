@@ -54,6 +54,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<UserEntity> getUserByUsername(String username) {
         // Use the existing findByUsernameIgnoreCase method in the repository
-        return userRepository.findByUsernameIgnoreCase(username);
+        return userRepository.findByUsername(username);
     }
 }

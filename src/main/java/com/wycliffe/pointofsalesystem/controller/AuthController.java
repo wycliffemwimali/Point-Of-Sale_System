@@ -68,8 +68,8 @@ public class AuthController {
         UserEntity newUser = new UserEntity();
         newUser.setUsername(userEntity.getUsername());
         newUser.setEmail(userEntity.getEmail());
-        newUser.setPassword(passwordEncoder.encode(userEntity.getPassword()));
-
+//        newUser.setPassword(passwordEncoder.encode(userEntity.getPassword()));
+        newUser.setPassword(userEntity.getPassword());
         try {
             UserEntity savedUser = userService.createUser(newUser);
             return ResponseEntity.ok(savedUser);

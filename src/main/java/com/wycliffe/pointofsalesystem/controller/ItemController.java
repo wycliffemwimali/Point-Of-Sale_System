@@ -29,10 +29,10 @@ public class ItemController {
     @PostMapping("/items")
     public ResponseEntity<ItemEntity> createItem(@RequestBody ItemDto itemDto) {
         try {
-            ItemEntity createdItem = itemService.createItem(itemDto);
-            return ResponseEntity.status(HttpStatus.CREATED).body(createdItem);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            ItemEntity newItem = itemService.createItem(itemDto);
+            return ResponseEntity.ok(newItem);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(null);
         }
     }
 
