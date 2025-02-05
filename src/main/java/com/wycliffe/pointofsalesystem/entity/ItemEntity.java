@@ -37,4 +37,52 @@ public class ItemEntity {
     @JsonIgnore
     @ManyToMany(mappedBy = "items")
     private Set<CheckoutEntity> checkouts = new HashSet<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public CategoryEntity getCategoryEntity() {
+        return categoryEntity;
+    }
+
+    public void setCategoryEntity(CategoryEntity categoryEntity) {
+        this.categoryEntity = categoryEntity;
+    }
+
+    public StockEntity getStockEntity() {
+        return stockEntity;
+    }
+
+    public void setStockEntity(StockEntity stockEntity) {
+        this.stockEntity = stockEntity;
+    }
+
+    public Set<CheckoutEntity> getCheckouts() {
+        return checkouts;
+    }
+
+    public void setCheckouts(Set<CheckoutEntity> checkouts) {
+        this.checkouts = checkouts;
+    }
 }

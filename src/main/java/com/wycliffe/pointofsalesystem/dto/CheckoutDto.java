@@ -9,4 +9,12 @@ import java.util.List;
 @Setter
 public class CheckoutDto {
     List<Long> items;
+
+    public List<Long> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Long> items) {
+        this.items = items;
+    }
 }
