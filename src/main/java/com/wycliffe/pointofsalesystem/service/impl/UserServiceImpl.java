@@ -18,13 +18,13 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Autowired
-    private PasswordEncoder passwordEncoder; // Injecting PasswordEncoder
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public UserEntity changeUserPassword(Long id, UserPwdDto userPwdDto) {
         UserEntity userEntity = userRepository.findById(id).orElse(null);
         if (userEntity != null) {
-            // Encode the new password
+
             String encodedPassword = passwordEncoder.encode(userPwdDto.getPassword());
             userEntity.setPassword(encodedPassword);
             return userRepository.save(userEntity);
@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserEntity createUser(UserEntity userEntity) {
-        // Encode the password before saving
+
         String encodedPassword = passwordEncoder.encode(userEntity.getPassword());
         userEntity.setPassword(encodedPassword);
         return userRepository.save(userEntity);
@@ -53,7 +53,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<UserEntity> getUserByUsername(String username) {
-        // Use the existing findByUsernameIgnoreCase method in the repository
         return userRepository.findByUsername(username);
     }
 }

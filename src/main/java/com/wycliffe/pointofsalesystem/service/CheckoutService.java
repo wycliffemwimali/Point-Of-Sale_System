@@ -10,5 +10,5 @@ public interface CheckoutService {
     List<CheckoutEntity> getAllCheckouts();
     CheckoutEntity getCheckoutById(Long id);
     CheckoutEntity createCheckout(CheckoutDto checkoutDto);
-    CheckoutEntity deleteCheckout(Long id); // Fixed return type
+    CheckoutEntity deleteCheckout(Long id);
 }

@@ -37,7 +37,6 @@ public class CategoryServiceImpl implements CategoryService {
             if (categoryEntity.getName() != null) {
                 existCategory.setName(categoryEntity.getName());
             }
-            // Add checks for other fields as needed
             categoryRepository.save(existCategory);
             return existCategory;
         } else {

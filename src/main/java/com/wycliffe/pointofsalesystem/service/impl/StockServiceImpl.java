@@ -65,7 +65,6 @@ public class StockServiceImpl implements StockService {
         if (stock != null) {
             stockRepository.delete(stock);
         } else {
-            // Optionally, throw an exception or log the error
             throw new RuntimeException("Stock not found with id: " + id);
         }
         return stock;

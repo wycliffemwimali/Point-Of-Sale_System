@@ -82,7 +82,6 @@ public class ItemServiceImpl implements ItemService {
         if (item != null) {
             itemRepository.delete(item);
         } else {
-            // Optionally, throw an exception or log the error
             throw new RuntimeException("Item not found with id: " + id);
         }
         return item;

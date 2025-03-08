@@ -10,5 +10,5 @@ public interface UserService {
     UserEntity getUserById(Long id);
     List<UserEntity> getAllUsers();
     UserEntity changeUserPassword(Long id, UserPwdDto userPwdDto);
-    Optional<UserEntity> getUserByUsername(String username);  // Change return type to Optional
+    Optional<UserEntity> getUserByUsername(String username);
 }
